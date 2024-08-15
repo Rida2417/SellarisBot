@@ -8,9 +8,9 @@ export async function POST(req) {
     const { userMessage } = await req.json();
 
     // Set up Azure OpenAI with Bearer Token Provider
-    const endpoint = process.env.ENDPOINT_URL || 'https://ai-supportbot.openai.azure.com/';
-    const deployment = process.env.DEPLOYMENT_NAME || 'ai-customer-support';
-    const apiVersion = process.env.AZURE_OPENAI_API_VERSION || '2024-05-01-preview';
+    const endpoint = 'https://ai-supportbot.openai.azure.com/';
+    const deployment = 'ai-customer-support'
+    const apiVersion ='2024-05-01-preview';
 
     const tokenProvider = getBearerTokenProvider(
       new DefaultAzureCredential(),
